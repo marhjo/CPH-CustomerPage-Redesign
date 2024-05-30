@@ -1,0 +1,136 @@
+---
+const description = "";
+const url = "";
+import "../css/main.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading1andP from "../components/Heading1andP.astro";
+import LostAndFound from "../components/LostAndFound.jsx";
+import Hero from "../components/Hero.astro";
+import heroImage from "../images/heroHittegods.webp";
+import BlueCross from "../components/BlueCross.astro";
+import Contact from "../components/Contact.astro";
+import { FAQ } from "../components/FAQ.jsx";
+---
+
+<MainLayout title="Kundeservice/hittegods">
+  <Hero
+    heroTitle="Hittegods"
+    heroDescription="Find dine mistede ejendele her eller få hjælp til at anmelde en tabt genstand"
+    heroImage={heroImage}
+    heroImageAlt="Hittegods i lufthavnen billede"
+  />
+  <main>
+    <Heading1andP
+      pageHeading="Har du mistet noget i lufthavnen?"
+      paragraph="På listen nedenfor kan du finde alle indleverede genstande, som er registreret af hittegods. Genstandene beholdes i 3 døgn efter vi har modtaget dem, hvorefter de sendes til politiets hittegodsafdeling."
+    />
+    <div class="py-8 w-full"><LostAndFound client:load /></div>
+    <div class="my-8">
+      <h2>Fandt du ikke din genstand på listen?</h2>
+      <p>
+        Mindre værdifulde genstande, som for eksempel tøj og bøger, registreres
+        ikke, men opbevares af hittegods i 4 uger. Se mere information i
+        spørgsmål og svar i bunden af siden.
+      </p>
+      <p>
+        Nogle typer genstande, som for eksempel pas og penge, sendes direkte til
+        Københavns Politis hittegodskontor. Se mere information i spørgsmål og
+        svar i bunden af siden.
+      </p>
+    </div>
+    <div class="flex gap-6 lg:gap-2 items-stretch flex-col lg:flex-row pt-4 my-4 lg:my-12">
+      <BlueCross />
+      <Contact />
+    </div>
+    <FAQ
+      client:load
+      headlineText="Ofte stillede spørgsmål"
+      paragraphText="Her kan du finde svar på de oftest stillede spørgsmål omkring hittegods."
+      faqQuestions={[
+        {
+          question: "Hvilke genstande registrerer Hittegods ikke?",
+          answer: `
+Følgende genstande registreres ikke, men opbevares hos CPH Hittegods i 4 uger:
+
+- Halstørklæder/tørklæder
+- Huer/handsker/kasketter
+- Sweaters/trøjer/cardigan/sko
+- Legetøj
+- Bælter
+- Nakkepuder/puder
+- Plakater/bøger/notesbøger/drikkedunke
+
+Ovennævnte genstande opbevares i 4 uger jf. Hittegodsloven. Du er velkommen til at henvende dig personligt i Airport Informationen i Terminal 3, mandag-fredag 08:00-14:00.
+
+Der er ikke mulighed for Hittegods-assistance uden for dette tidsrum.
+
+Airport Informationen kan ikke kontaktes telefonisk eller via mail.
+
+Er du selv forhindret i at møde op, er det muligt at lade en anden person komme på dine vegne.
+`,
+        },
+        {
+          question: "Hvad bliver sendt til politiets hittegodskontor?",
+          answer:
+`Følgende genstande registreres ikke hos CPH Hittegods, men sendes direkte til Politiets Hittegods i København:
+
+- Jakker/frakker/veste
+- Smykker
+- Briller og solbriller
+- Nøgler (bilnøgler undtaget)
+- Toilettasker og kosmetikpunge
+- Poser med værdi (herunder Taxfree produkter/gaver/nyindkøbte genstande)
+- Større rygsække og større tasker
+- Trolleys
+- Klapvogne
+- Rollator og kørestole
+- Medicin (inkl. pilleæsker) og vitaminer`,
+          text: "Politiets hittegods",
+          hyperRef: "https://politi.dk/politikredse/koebenhavns-politi/koebenhavns-politi-hittegodskontor",
+        },
+        {
+          question: "Hvor længe opbevarer hittgods værdigenstande?",
+          answer:
+            `Det hittegods, som vi registrerer, opbevarer vi i op til 3 dage, hvor du så kan claime din glemte genstand, samt vælge enten af afhente den eller få den sendt med posten. Efter de tre dage afhenter Politiets Hittegodskontor de glemte genstande og overtager al service i den forbindelse.`,
+          text: "Politiets hittegods",
+          hyperRef:
+            "https://politi.dk/politikredse/koebenhavns-politi/koebenhavns-politi-hittegodskontor",
+        },
+        {
+          question: "Kan jeg hente min glemte genstand i lufthavnen?",
+          answer:
+            `Du kan få tilsendt de genstande du har claimet eller selv hente dem i lufthavnen. Ved forsendelse opkræves der et administrationsgebyr på 205 dkk samt et beløb for forsendelsen, jf. Postnords [prisliste](https://www.postnord.dk/varktojer/findprisen/).`,
+
+        },
+      ]}
+    />
+  </main>
+</MainLayout>
+
+<style>
+  h2 {
+    color: var(--cph-blue);
+    font-size: var(--fs-4);
+    font-weight: var(--fw-semi-bold);
+
+    @media (width<1024px) {
+      font-size: var(--fs-5);
+    }
+    @media (width<482px) {
+      font-size: var(--fs-6);
+    }
+  }
+  p {
+    color: var(--grey-text);
+    font-size: var(--fs-large);
+    text-wrap: pretty;
+
+    &:not(:first-of-type) {
+      margin-top: 16px;
+    }
+
+    @media (width<1024px) {
+      font-size: var(--fs-p);
+    }
+  }
+</style>

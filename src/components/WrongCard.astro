@@ -1,0 +1,92 @@
+---
+const { cardTitle, cardText, href, cardImage } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<a href={href} class="redirect-card">
+  <div class="img-container">
+    <Image src={cardImage} alt="" />
+  </div>
+
+  <div class="card-content">
+    <h3>{cardTitle}</h3>
+    <p>{cardText}</p>
+    <h4>Gå til <span>kundeservice/{cardTitle}</span></h4>
+  </div>
+</a>
+
+<style>
+  .redirect-card {
+    max-width: 300px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    &:hover {
+      box-shadow: var(--box-shadow-hover);
+      }
+    @media (width<1024px) {
+      max-width: 225px;
+    }
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 12px 16px;
+
+    @media (width<1024px) {
+      padding: 8px 12px 8px;
+    }
+  }
+  h3 {
+    color: var(--cph-blue);
+    font-weight: var(--fw-semi-bold);
+    font-size: var(--fs-5);
+
+    @media (width<1024px) {
+      font-size: var(--fs-6);
+    }
+  }
+  p {
+    font-size: var(--fs-small);
+
+    @media (width<1024px) {
+      font-size: var(--fs-smaller);
+    }
+  }
+  h4 {
+    margin-top: 12px;
+    font-weight: var(--fw-medium);
+    color: var(--grey-text);
+    font-size: var(--fs-p);
+    font-style: italic;
+
+    @media (width<1024px) {
+      font-size: var(--fs-small);
+    }
+  }
+  h4 span {
+    color: var(--cph-blue);
+    font-weight: var(--fw-semi-bold);
+    text-transform: lowercase;
+  }
+  .redirect-card:hover h4 span{
+    color: var(--light-blue);
+  }
+  .img-container {
+    width: 100%;
+    aspect-ratio: 3/2;
+
+    @media (max-width: 1024px) {
+      height: 150px;
+    }
+  }
+  img {
+    width: 100%;
+    height: initial;
+    object-fit: cover;
+  }
+</style>

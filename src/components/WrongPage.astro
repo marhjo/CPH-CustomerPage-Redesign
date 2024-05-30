@@ -1,0 +1,68 @@
+---
+import WrongCard from "./WrongCard.astro";
+import Hittegods from "../images/redirect-hittegods.webp";
+import Security from "../images/redirect-security.webp";
+import Parkering from "../images/redirect-parkering.webp";
+---
+
+<div class="wrong-card">
+  <h2>Er du landet på den forkerte side?</h2>
+  <p>Her kan du gå til en af de andre kundeservicesider.</p>
+  <div class="card-list">
+    <WrongCard
+      cardTitle="Parkering"
+      cardText="Find ud af hvad du har brug for at vide om parkering i lufthavnen."
+      href="/parkering/"
+      cardImage={Parkering}
+      cardAlt="Gå til parkering"
+    />
+    <WrongCard
+      cardTitle="Security"
+      cardText="Få svar på dine spørgsmål omkring sikkerhedkontrol i lufthavnen."
+      href="/security/"
+      cardImage={Security}
+      cardAlt="Gå til Security"
+    />
+    <WrongCard
+      cardTitle="Hittegods"
+      cardText="Få hjælp hvis du har mistet en genstand i lufthavnen."
+      href="/hittegods/"
+      cardImage={Hittegods}
+      cardAlt="Gå til Hittegods"
+    />
+  </div>
+</div>
+
+<style>
+  .card-list {
+    margin-top: 16px;
+    display: flex;
+    gap: 44px;
+
+    @media (width<1024px) {
+      gap: 20px;
+    }
+    @media (width<768px) {
+      flex-wrap: wrap;
+    }
+  }
+  h2 {
+    font-size: var(--fs-4);
+    color: var(--cph-blue);
+    font-weight: var(--fw-semi-bold);
+
+    @media (width<1024px) {
+      font-size: var(--fs-5);
+    }
+    @media (width<340px) {
+      font-size: var(--fs-6);
+    }
+  }
+  p {
+    font-size: var(--fs-large);
+
+    @media (width<1024px) {
+      font-size: var(--fs-p);
+    }
+  }
+</style>

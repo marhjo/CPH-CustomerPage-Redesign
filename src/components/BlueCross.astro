@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import bluecross from "../images/bluecross.webp";
+---
+
+<div class="cross-container">
+    <img src={bluecross.src} alt="Blå kors logo">
+    <p>Uafhentede genstande doneres til Blå Kors, som hjælper udsatte børn, unge og voksne i Danmark.</p>
+</div>
+
+<style>
+  .cross-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 36px;
+    max-width: 550px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-medium);
+    align-self: center;
+
+    & p {
+      max-width: 444px;
+    }
+
+    @media (width<340px) {
+      padding: 24px 32px;
+      gap: 16px;
+    }
+  }
+  img {
+    max-width: 234px;
+    height: auto;
+  }
+</style>

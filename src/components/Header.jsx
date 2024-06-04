@@ -126,7 +126,7 @@ export default function Header() {
                 height={28}
                 data-slot="icon"
                 fill="none"
-                stroke-width="3"
+                strokeWidth="3"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Header() {
                   transform: isOpen ? `rotate(180deg)` : "rotate(0deg)",
                 }}
                 className="transition-transform duration-300 ease-in-out min-w-10">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
               </svg>
               {isOpen && (
                 <div className="lang-drop">
@@ -189,7 +189,7 @@ export default function Header() {
                   height={28}
                   data-slot="icon"
                   fill="none"
-                  stroke-width="3"
+                  strokeWidth="3"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +198,7 @@ export default function Header() {
                     transform: isOpen ? `rotate(180deg)` : "rotate(0deg)",
                   }}
                   className="transition-transform duration-300 ease-in-out min-w-10">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
                 </svg>
                 {isOpen && (
                   <div className="lang-drop">

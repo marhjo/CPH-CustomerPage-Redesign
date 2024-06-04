@@ -6,10 +6,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 import heroImage from "../images/heroIndex.webp";
-import parkering from "../images/handicapparkering.webp"
-import security from "../images/sikkerhedskontrol.webp"
-import hittegods from "../images/hittegods.webp"
-import kontakt from "../images/kontakt.webp"
+import parkering from "../images/handicapparkering.webp";
+import security from "../images/sikkerhedskontrol.webp";
+import hittegods from "../images/hittegods.webp";
+import kontakt from "../images/kontakt.webp";
 import FrontPageCard from "../components/FrontPageCard.astro";
 import { FAQ } from "../components/FAQ";
 import i18next, { t, changeLanguage } from "i18next";
@@ -17,103 +17,79 @@ import i18next, { t, changeLanguage } from "i18next";
 changeLanguage("dk");
 ---
 
-<MainLayout title="Kundeservice">
+<MainLayout title={t("index.title")}>
   <Hero
-    heroTitle="Kundeservice"
-    heroDescription="Hos CPH kundeservice hjælper vi dig med at komme nemt gennem lufthavnen"
+    heroTitle={t("index.hero.heroTitle")}
+    heroDescription={t("index.hero.heroDescription")}
     heroImage={heroImage}
     heroImageAlt="Billede af medarbejdere i lufthavnen"
   />
   <main>
     <Grid type="2+2" class="gap-5 w-full">
       <FrontPageCard
-        cardTitle="Parkering"
-        cardDescription="Se eller ændr din\n parkering her"
+        cardTitle={t("index.grid.1.title")}
+        cardDescription={t("index.grid.1.description")}
         targetLocation="/parkering"
         cardIcon={parkering}
-        iconAlt="Bilikon"
+        iconAlt={t("index.grid.1.alt")}
       />
       <FrontPageCard
-        cardTitle="Security"
-        cardDescription="Få svar på vigtige spørgmål\n om sikkerhedskontrol her"
+        cardTitle={t("index.grid.2.title")}
+        cardDescription={t("index.grid.2.description")}
         targetLocation="/security"
         cardIcon={security}
-        iconAlt="Sikkerhedstjekikon"
+        iconAlt={t("index.grid.2.alt")}
       />
       <FrontPageCard
-        cardTitle="Hittegods"
-        cardDescription="Find din genstand, hvis den er\n mistet i CPH Lufthavn"
+        cardTitle={t("index.grid.3.title")}
+        cardDescription={t("index.grid.3.description")}
         targetLocation="/hittegods"
         cardIcon={hittegods}
-        iconAlt="Hittegodsikon"
+        iconAlt={t("index.grid.3.alt")}
       />
       <FrontPageCard
-        cardTitle="Kontakt"
-        cardDescription="Kontak os i\n CPH kundeservice"
+        cardTitle={t("index.grid.4.title")}
+        cardDescription={t("index.grid.4.description")}
         targetLocation="/kontakt"
         cardIcon={kontakt}
-        iconAlt="Kontaktikon"
+        iconAlt={t("index.grid.4.alt")}
       />
     </Grid>
 
     <FAQ
       client:load
-      headlineText="Skal du bruge hjælp til noget andet?"
-      paragraphText="Få svar på nogle ofte stillede spørgsmål omkring ting kundeservice ikke hjælper med."
+      headlineText={t("index.FAQ.title")}
+      paragraphText={t("index.FAQ.text")}
       faqQuestions={[
         {
-          question: "Hvor meget bagage må jeg have med?",
-          answer: `Antallet af [indcheckede](https://www.cph.dk/flyinformation/flyselskaber) bagagestykker, håndbagage og personlige genstande varierer afhængigt af din billettype, destination og de specifikke regler fastsat af dit flyselskab. Derfor anbefaler vi, at du læser nærmere på dit flyselskabs hjemmeside for yderligere information.
-
-Du kan finde linket til dit flyselskabs hjemmeside samt eventuelle kontaktoplysninger linket nedenfor.`,
-          text: "Flyselskaber",
+          question: t("index.FAQ.questions.1.q"),
+          answer: t("index.FAQ.questions.1.a"),
+          text: t("index.FAQ.questions.1.text"),
           hyperRef: "https://www.cph.dk/flyinformation/flyselskaber",
         },
         {
-          question: "Hvornår skal jeg checke ind i lufthavnen?",
-          answer: `Du bør altid ankomme til lufthavnen i god tid inden din afgang, da der kan forekomme kø ved check-in, sikkerhedskontrol og paskontrol.
-
-Vi anbefaler generelt at ankomme til lufthavnen 2 1/2 timer før afgang på flyvninger inden for [Schengen-området](https://www.axa-schengen.com/en/countries-schengen-area) og 3 timer før for flyvninger uden for Schengen-området. Bemærk venligst, at disse tider henviser til den første destination på din rejse. For eksempel, hvis du har et mellemlanding i Tyskland på en flyvning til Asien, anbefaler vi at ankomme 2 1/2 timer før afgang, da din første destination er inden for Schengen.
-
-Du kan se yderligere information om afgangsterminaler, check-in, bagageregler og kontaktoplysninger for dit flyselskab på linket nedenfor.`,
-          text: "Flyselskaber",
+          question: t("index.FAQ.questions.2.q"),
+          answer: t("index.FAQ.questions.2.a"),
+          text: t("index.FAQ.questions.2.text"),
           hyperRef: "https://www.cph.dk/flyinformation/flyselskaber",
         },
         {
-          question:
-            "Hvordan kan CPH hjælpe passagerer med usynlige handicap på vej gennem lufthavnen?",
-          answer: `For at hjælpe rejsende med usynlige handicap såsom ADHD, autisme og ordblindhed har vi indført en ordning i Københavns Lufthavn kaldet Solsikkesnoren.
-
-Solsikkesnoren sikrer, at personer med usynlige handicap og diagnoser ikke behøver at forklare sig eller retfærdiggøre deres behov i situationer, hvor angst, stress, forvirring eller behov for hjælp opstår. Alle medarbejdere i lufthavnen, inklusive dem ved check-in og sikkerhedskontrollen, er bekendte med ordningen. Derfor er det blot nødvendigt at bære denne snor om halsen, så vil personalet være opmærksomme på behovet for synlige hensyn.
-
-Det er vigtigt at bemærke, at dette ikke betyder, at man automatisk får en hurtigere gennemgang i sikkerhedskontrollen. Hvis nødvendigt, anbefaler vi at bestille assistance.
-
-Desværre har vi ikke mulighed for at sende solsikkesnoren ud på forhånd. Hvis du henvender dig til vores informationsskranken i terminalerne, vil de med glæde hjælpe dig med at skaffe en solsikkesnor. Ordningen er gratis, og du kan læse mere om Solsikkesnoren på linket nedenfor.`,
-          text: "Læs mere",
+          question: t("index.FAQ.questions.3.q"),
+          answer: t("index.FAQ.questions.3.a"),
+          text: t("index.FAQ.questions.3.text"),
           hyperRef:
             "https://www.cph.dk/praktisk/rejsende-med-usynlige-handicap",
         },
         {
-          question:
-            "Min bagage var ikke med mit fly, da jeg landede i CPH, hvad gør jeg?",
-          answer: `Hvis din bagage ikke ankommer med flyet, skal du straks rapportere det til ankomstservice i bagageområdet, inden du forlader lufthavnen. Når du udfylder rapporten, skal du sørge for at have din bagagekvittering med, som viser stregkoden og destinationskoden, samt dit boardingkort eller rejsebevis.
-
-Det er vigtigt at beskrive din mistede bagage så detaljeret som muligt, inklusive dens udseende. Hvis du allerede har forladt lufthavnen, skal du kontakte handlingselskabet for det flyselskab, du har fløjet med, og rapportere den mistede bagage.
-
-Du kan finde oplysninger om, hvilket handlingselskab der håndterer dit flyselskab via [dette link](https://www.cph.dk/flyinformation/flyselskaber).
-
-Du kan finde kontaktinformationen til handlingselskaberne på linket nedenfor.`,
-          text: "Handlingselskaber",
+          question: t("index.FAQ.questions.4.q"),
+          answer: t("index.FAQ.questions.4.a"),
+          text: t("index.FAQ.questions.4.text"),
           hyperRef: "https://www.cph.dk/flyinformation/handlingselskaber",
         },
         {
-          question: "Hvad er TAX-FREE Shoppens åbningstider?",
-          answer: `Den store TAX-FREE Main Shop, som du passerer umiddelbart efter sikkerhedskontrollen, har døgnåbent hver dag, ligesom deres afdeling ved bagageudleveringen.
-
-De øvrige mindre TAX-FREE Shop-afdelinger har mere begrænsede åbningstider, så vi anbefaler at benytte den store TAX-FREE Shop for at være på den sikre side.
-
-Du kan altid finde de specifikke åbningstider for deres forskellige afdelinger ved at klikke på linket nedenfor.`,
-          text: "TAX FREE",
+          question: t("index.FAQ.questions.5.q"),
+          answer: t("index.FAQ.questions.5.a"),
+          text: t("index.FAQ.questions.5.text"),
           hyperRef: "https://www.cph.dk/butikker-spisesteder/tax-free",
         },
       ]}

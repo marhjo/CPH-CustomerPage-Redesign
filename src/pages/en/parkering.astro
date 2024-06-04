@@ -1,0 +1,131 @@
+---
+import { changeLanguage } from "i18next";
+const description = "";
+const url = "";
+import "../../css/main.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import ThreeoneCard1 from "../../components/ThreeoneCard1.astro";
+import ThreeoneCard2 from "../../components/ThreeoneCard2.astro";
+import Hero from "../../components/Hero.astro";
+import heroImage from "../../images/heroParkering.webp";
+import handicapparkering from "../../images/handicapparkering.webp";
+import kvittering from "../../images/kvittering.webp";
+import klagevejledning from "../../images/klagevejledning.webp";
+import Grid from "../../components/Grid.astro";
+import GetParking from "../../components/GetParking.astro";
+import MyReservation from "../../components/MyReservation.jsx";
+import { FAQ } from "../../components/FAQ.jsx";
+
+changeLanguage("en");
+---
+
+<MainLayout title="Kundeservice/parkering">
+  <Hero
+    heroTitle="Parkering"
+    heroDescription="Få information om dine parkeringsmuligheder og find hjælp til alle spørgsmål vedrørende parkering i CPH"
+    heroImage={heroImage}
+    heroImageAlt="Parkering i CPH Lufthavn Billede"
+  />
+  <main>
+    <MyReservation client:load />
+
+    <div class="my-28"><GetParking /></div>
+
+    <h2 class="self-start text-5 text-cph-blue font-bold">
+      Flere muligheder for parkering
+    </h2>
+    <Grid type="3+1" class="max-w-[1024px] mx-auto gap-3 py-5 mb-4">
+      <ThreeoneCard1
+        cardTitle="Handicapparkering"
+        cardDescription="I CPH Airport er der mulighed for handicapparkering. Du kan finde den information du skal bruge her. "
+        targetLocation="https://www.cph.dk/parkering-transport/handicapparkering"
+        cardIcon={handicapparkering}
+        iconAlt="Handicapikon"
+      />
+      <ThreeoneCard1
+        cardTitle="Print kvittering"
+        cardDescription="Har du brug for at printe din kvittering fra din seneste parkering i Københavns Lufthavn, så kan du kontakte vores kundeservice ved at klikke her."
+        targetLocation="/kontakt"
+        cardIcon={kvittering}
+        iconAlt="Checkmarkikon"
+      />
+      <ThreeoneCard1
+        cardTitle="Klagevejledning"
+        cardDescription="Har du brug for klage skal du kontakte kundeservice. Du finder mere information på denne side. "
+        targetLocation="https://www.cph.dk/kundeservice/parkering/klageadgang"
+        cardIcon={klagevejledning}
+        iconAlt="Papirikon"
+      />
+      <ThreeoneCard2
+        slot="third"
+        cardTitle="Læs om vores købsbetingelser for CPH Parkering, SteamRex ApS og din fortrydelsesret. "
+        cardDescription="Linket her åbner en pop-up boks i dit browservindue."
+        targetLocation=""
+      />
+    </Grid>
+    <FAQ
+      client:load
+      headlineText="Ofte stillede spørgsmål"
+      paragraphText="Her kan du finde svar på de oftest stillede spørgsmål omkring hittegods."
+      faqQuestions={[
+        {
+          question: "Hvad er priserne for parkering i CPH?",
+          answer: `Priserne på parkering i CPH varierer og afhænger primært af i hvor god tid du bestiller og hvor travlt der er i parkeringshusene. Prissætningen følger samme metode som vi kender det når vi booker flybilletter og hotelovernatninger.
+
+Det betyder, at parkeringen kan blive billigere hvis du bestiller i god tid - eller dyrere hvis det først er på selve dagen. På samme måde vil parkeringen være dyrere i de travleste uger over sommeren end når du skal på tur til julemarked i december.
+
+Vi anbefaler altid at booke på forhånd, da det normalt er billigere, og du så er garanteret en plads på det P-anlæg, du ønsker.
+
+Du kan søge på den periode, du ønsker at booke [her](https://www.cph.dk/parkering-transport) på vores hjemmeside.
+
+Øverst på vores prisside, kan du finde vejledende priser for onlinebooking, mens de faste drive-in priser er placeret nederst på samme side.`,
+          text: "Se prisliste",
+          hyperRef: "https://www.cph.dk/parkering-transport/priser-produkter",
+        },
+        {
+          question: "Hvordan ændrer jeg min parkerings-booking?",
+          answer: `Hvis din booking ikke er startet endnu:
+
+For at ændre din booking skal du bruge dit reservationsnummer og den e-mail, du brugte til at foretage parkeringsreservationen. Dit reservationsnummer kan findes øverst i din bekræftelsesmail. Følg disse trin:
+
+- Log ind med dit reservationsnummer og e-mail [her](https://www.cph.dk/parkering/manage).
+- Klik på "Find booking".
+- Klik på "Ret tidspunkt eller dato".
+- Hvis din browser ikke åbner din kurv automatisk, skal du klikke på kurv-ikonet i øverste højre hjørne.
+- Ændr datoen. Ønsker du også at ændre anlæg, så tryk på "Ret P-anlæg" efterfølgende og vælge det ønskede anlæg på kortet.
+- Klik på "Reserver" for det produkt, du ønsker.
+- Hvis du vælger en parkeringsfacilitet til samme pris, vil du modtage en ny bekræftelse.
+- Hvis du vælger en dyrere parkeringsfacilitet, skal du betale differencen, og du vil modtage en ny bekræftelsesmail med en ny QR-kode.
+- Hvis du vælger en billigere parkeringsfacilitet, vil differencen automatisk blive refunderet til din konto, så snart du har foretaget ændringen.
+
+Hvis din booking allerede er startet:
+
+For at ændre din booking skal du bruge dit reservationsnummer og den e-mail, du brugte til at foretage parkeringsreservationen. Dit reservationsnummer kan findes øverst i din bekræftelsesmail. Følg disse trin:
+
+- Log ind med dit reservationsnummer og e-mail [her](https://www.cph.dk/parkering/manage).
+- Klik på "Find booking".
+- Klik på "Ret udkørselstidspunkt" og vælg det nye tidspunkt.
+- Når du forlænger din booking, vil du blive opkrævet differencen, og du vil modtage en ny bekræftelsesmail med en ny QR-kode.
+
+Bemærk venligst, at du ikke kan forkorte en booking, der allerede er startet, og du kan ikke forlænge en booking, der allerede er afsluttet. Du vil blive opkrævet for eventuel ekstra tid baseret på drive-in-priserne ved udkørslen, som kan findes nederst på [denne side](https://www.cph.dk/parkering-transport/priser-produkter).`,
+        },
+        {
+          question:
+            "Kan jeg få mine penge refunderet, hvis jeg annullerer min booking?",
+          answer: `Ja, så længe du annullerer din booking senest en time før det valgte indkørselstidspunkt, er du altid sikret at få dine penge refunderet.
+
+Hvis fristen overskrides, vil der dog være behov for en individuel vurdering. I så fald kan du kontakte CPH Kundeservice for yderligere assistance.`,
+          text: "Kontakt Kundeservice",
+          hyperRef: "/kontakt",
+        },
+        {
+          question:
+            "Hvad gør jeg hvis jeg får brug for hjælp når jeg parkerer?",
+          answer: `Vores Parkeringsservice-vagter er tilgængelige døgnet rundt. Du kan kontakte dem ved at trykke på Info-knappen, som du finder ved alle ind- og ud-kørselsbomme samt på betalingsautomaterne. Hvis du har brug for hjælp med f.eks. el-start eller lignende, kan vores servicevagter også hjælpe dig på stedet.`,
+        },
+      ]}
+    />
+  </main>
+</MainLayout>
+
+<style></style>

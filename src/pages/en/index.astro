@@ -1,0 +1,100 @@
+---
+const description = "";
+const url = "";
+import "../../css/main.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Grid from "../../components/Grid.astro";
+import heroImage from "../../images/heroIndex.webp";
+import parkering from "../../images/handicapparkering.webp";
+import security from "../../images/sikkerhedskontrol.webp";
+import hittegods from "../../images/hittegods.webp";
+import kontakt from "../../images/kontakt.webp";
+import FrontPageCard from "../../components/FrontPageCard.astro";
+import { FAQ } from "../../components/FAQ";
+import i18next, { t, changeLanguage } from "i18next";
+
+changeLanguage("en");
+---
+
+<MainLayout title={t("index.title")}>
+  <Hero
+    heroTitle={t("index.hero.heroTitle")}
+    heroDescription={t("index.hero.heroDescription")}
+    heroImage={heroImage}
+    heroImageAlt="Billede af medarbejdere i lufthavnen"
+  />
+  <main>
+    <Grid type="2+2" class="gap-5 w-full">
+      <FrontPageCard
+        cardTitle={t("index.grid.1.title")}
+        cardDescription={t("index.grid.1.description")}
+        targetLocation="/parkering"
+        cardIcon={parkering}
+        iconAlt={t("index.grid.1.alt")}
+      />
+      <FrontPageCard
+        cardTitle={t("index.grid.2.title")}
+        cardDescription={t("index.grid.2.description")}
+        targetLocation="/security"
+        cardIcon={security}
+        iconAlt={t("index.grid.2.alt")}
+      />
+      <FrontPageCard
+        cardTitle={t("index.grid.3.title")}
+        cardDescription={t("index.grid.3.description")}
+        targetLocation="/hittegods"
+        cardIcon={hittegods}
+        iconAlt={t("index.grid.3.alt")}
+      />
+      <FrontPageCard
+        cardTitle={t("index.grid.4.title")}
+        cardDescription={t("index.grid.4.description")}
+        targetLocation="/kontakt"
+        cardIcon={kontakt}
+        iconAlt={t("index.grid.4.alt")}
+      />
+    </Grid>
+
+    <FAQ
+      client:load
+      headlineText={t("index.FAQ.title")}
+      paragraphText={t("index.FAQ.text")}
+      faqQuestions={[
+        {
+          question: t("index.FAQ.questions.1.q"),
+          answer: t("index.FAQ.questions.1.a"),
+          text: t("index.FAQ.questions.1.text"),
+          hyperRef: "https://www.cph.dk/flyinformation/flyselskaber",
+        },
+        {
+          question: t("index.FAQ.questions.2.q"),
+          answer: t("index.FAQ.questions.2.a"),
+          text: t("index.FAQ.questions.2.text"),
+          hyperRef: "https://www.cph.dk/flyinformation/flyselskaber",
+        },
+        {
+          question: t("index.FAQ.questions.3.q"),
+          answer: t("index.FAQ.questions.3.a"),
+          text: t("index.FAQ.questions.3.text"),
+          hyperRef:
+            "https://www.cph.dk/praktisk/rejsende-med-usynlige-handicap",
+        },
+        {
+          question: t("index.FAQ.questions.4.q"),
+          answer: t("index.FAQ.questions.4.a"),
+          text: t("index.FAQ.questions.4.text"),
+          hyperRef: "https://www.cph.dk/flyinformation/handlingselskaber",
+        },
+        {
+          question: t("index.FAQ.questions.5.q"),
+          answer: t("index.FAQ.questions.5.a"),
+          text: t("index.FAQ.questions.5.text"),
+          hyperRef: "https://www.cph.dk/butikker-spisesteder/tax-free",
+        },
+      ]}
+    />
+  </main>
+</MainLayout>
+
+<style></style>

@@ -1,0 +1,30 @@
+---
+import { changeLanguage } from "i18next";
+const description = "";
+const url = "";
+import "../../css/main.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import WrongPage from "../../components/WrongPage.astro";
+import Hero from "../../components/Hero.astro";
+import heroImage from "../../images/heroKontakt.webp";
+import ContactForm from "../../components/ContactForm.astro";
+import Contact from "../../components/Contact.astro";
+
+changeLanguage("en");
+---
+
+<MainLayout title="Kundeservice/kontakt">
+  <Hero
+    heroTitle="Kontakt"
+    heroDescription="Har du spørgsmål eller brug for hjælp? Kontakt vores kundeservice via vores formular på siden her"
+    heroImage={heroImage}
+    heroImageAlt="Kontakt os Billede"
+  />
+  <main>
+    <ContactForm />
+    <div class="my-12"><Contact /></div>
+    <WrongPage />
+  </main>
+</MainLayout>
+
+<style></style>

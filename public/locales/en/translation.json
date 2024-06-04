@@ -1,0 +1,64 @@
+{
+  "heroLink": "CUSTOMER SERVICE",
+  "index": {
+    "title": "Customer Service",
+    "hero": {
+      "heroTitle": "Customer Service",
+      "heroDescription": "At CPH customer service, we help you navigate the airport easily",
+      "heroAlt": "Picture of employees in the airport"
+    },
+    "grid": {
+      "1": {
+        "title": "Parking",
+        "description": "See or change your\n parking here",
+        "alt": "Car icon"
+      },
+      "2": {
+        "title": "Security",
+        "description": "Get answers to important questions\n about security checks here",
+        "alt": "Security check icon"
+      },
+      "3": {
+        "title": "Lost and Found",
+        "description": "Find your item if it's\n lost in CPH Airport",
+        "alt": "Lost and found icon"
+      },
+      "4": {
+        "title": "Contact",
+        "description": "Contact us at\n CPH customer service",
+        "alt": "Contact icon"
+      }
+    },
+    "FAQ": {
+      "title": "Need help with something else?",
+      "text": "Get answers to frequently asked questions about things customer service does not assist with.",
+      "questions": {
+        "1": {
+          "q": "How much baggage am I allowed to bring?",
+          "a": "The number of [checked](https://www.cph.dk/flyinformation/flyselskaber) baggage pieces, carry-on baggage, and personal items varies depending on your ticket type, destination, and the specific rules set by your airline. Therefore, we recommend checking your airline's website for further information.\n\nYou can find the link to your airline's website and any contact information below.",
+          "text": "Airlines"
+        },
+        "2": {
+          "q": "When should I check in at the airport?",
+          "a": "You should always arrive at the airport well in advance of your departure, as there may be queues at check-in, security, and passport control.\n\nWe generally recommend arriving at the airport 2 1/2 hours before departure for flights within the [Schengen area](https://www.axa-schengen.com/en/countries-schengen-area) and 3 hours before for flights outside the Schengen area. Please note that these times refer to the first destination on your journey. For example, if you have a layover in Germany on a flight to Asia, we recommend arriving 2 1/2 hours before departure, as your first destination is within the Schengen area.\n\nYou can find additional information about departure terminals, check-in, baggage rules, and contact information for your airline at the link below.",
+          "text": "Airlines"
+        },
+        "3": {
+          "q": "How can CPH assist passengers with invisible disabilities while navigating the airport?",
+          "a": "To assist travelers with invisible disabilities such as ADHD, autism, and dyslexia, we have introduced a scheme at Copenhagen Airport called the Sunflower Lanyard.\n\nThe Sunflower Lanyard ensures that individuals with invisible disabilities and diagnoses do not need to explain or justify their needs in situations where anxiety, stress, confusion, or a need for assistance arises. All airport staff, including those at check-in and security, are familiar with the scheme. Therefore, it is simply necessary to wear this lanyard around your neck, and staff will be aware of the need for visible considerations.\n\nIt is important to note that this does not mean automatic expedited passage through security. If necessary, we recommend requesting assistance.\n\nUnfortunately, we are unable to send out the sunflower lanyard in advance. If you approach our information desks in the terminals, they will be happy to help you obtain a sunflower lanyard. The scheme is free, and you can read more about the Sunflower Lanyard at the link below.",
+          "text": "Read more"
+        },
+        "4": {
+          "q": "My baggage did not arrive with my flight when I landed at CPH, what should I do?",
+          "a": "If your baggage does not arrive with the flight, you should immediately report it to the arrival service in the baggage area before leaving the airport. When completing the report, be sure to have your baggage receipt showing the barcode and destination code, as well as your boarding pass or travel document.\n\nIt is important to describe your lost baggage as accurately as possible, including its appearance. If you have already left the airport, you should contact the handling company for the airline you flew with and report the lost baggage.\n\nYou can find information about which handling company handles your airline via [this link](https://www.cph.dk/flyinformation/flyselskaber).\n\nYou can find the contact information for the handling companies at the link below.",
+          "text": "Handling companies"
+        },
+        "5": {
+          "q": "What are the TAX-FREE Shop's opening hours?",
+          "a": "The large TAX-FREE Main Shop, which you pass immediately after security, is open 24 hours a day, just like their department at the baggage reclaim.\n\nThe other smaller TAX-FREE Shop departments have more limited opening hours, so we recommend using the large TAX-FREE Shop to be on the safe side.\n\nYou can always find the specific opening hours for their various departments by clicking on the link below.",
+          "text": "TAX FREE"
+        }
+      }
+    }
+  }
+}

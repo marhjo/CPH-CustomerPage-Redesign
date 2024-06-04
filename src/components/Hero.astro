@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
+import  { t } from "i18next";
 const { heroTitle, heroDescription, heroImage, heroImageAlt } = Astro.props;
 ---
 
@@ -9,7 +9,7 @@ const { heroTitle, heroDescription, heroImage, heroImageAlt } = Astro.props;
     class="flex justify-end items-center p-4 w-full sm:w-1/2 bg-grey-lighter"
   >
     <div class="max-w-[500px] w-full">
-      <a class="text-light-blue font-bold" href="/">KUNDESERVICE</a>
+      <a class="text-light-blue font-bold" href="/">{t("heroLink")}</a>
       <h1 class="font-bold text-cph-blue text-4 sm:text-3 md:text-2">
         {heroTitle}
       </h1>

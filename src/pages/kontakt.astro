@@ -1,4 +1,5 @@
 ---
+import { changeLanguage } from "i18next";
 const description = "";
 const url = "";
 import "../css/main.css";
@@ -8,6 +9,8 @@ import Hero from "../components/Hero.astro";
 import heroImage from "../images/heroKontakt.webp";
 import ContactForm from "../components/ContactForm.astro";
 import Contact from "../components/Contact.astro";
+
+changeLanguage("dk");
 ---
 
 <MainLayout title="Kundeservice/kontakt">

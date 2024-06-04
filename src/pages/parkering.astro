@@ -1,4 +1,5 @@
 ---
+import { changeLanguage } from "i18next";
 const description = "";
 const url = "";
 import "../css/main.css";
@@ -14,6 +15,8 @@ import Grid from "../components/Grid.astro";
 import GetParking from "../components/GetParking.astro";
 import MyReservation from "../components/MyReservation.jsx";
 import { FAQ } from "../components/FAQ.jsx";
+
+changeLanguage("dk");
 ---
 
 <MainLayout title="Kundeservice/parkering">

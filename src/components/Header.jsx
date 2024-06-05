@@ -75,11 +75,43 @@ export default function Header() {
   function handleLiFourClick() {
     setLiFourActive((old) => !old);
   }
+  useEffect(() => {
+    if (!window.location.pathname.includes("/en")) {
+      localStorage.setItem("selectedLanguage", "da");
+    }
+  }, []);
+
+  useEffect(() => {
+    const getLanguageFromStorage = () => {
+      const selectedLang = localStorage.getItem("selectedLanguage") || "da";
+      setLang(selectedLang);
+    };
+
+    getLanguageFromStorage();
+
+    const handlePopstate = () => {
+      getLanguageFromStorage();
+    };
+
+    window.addEventListener("popstate", handlePopstate);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopstate);
+    };
+  }, []);
 
   const switchLanguage = (selectedLang) => {
+    localStorage.setItem("selectedLanguage", selectedLang);
+
     setLang(selectedLang);
-    setTimeout(() => setIsOpen(false), 0);
+
+    setIsOpen(false);
+
+    const newPath = selectedLang === "en" ? "/en" : "/";
+    window.history.pushState({}, "", newPath);
+    window.location.href = newPath;
   };
+
   const toggleOpen = () => {
     setIsOpen((prevOpen) => !prevOpen);
   };

@@ -13,7 +13,7 @@ export default function Header() {
   const [liTwoActive, setLiTwoActive] = useState(false);
   const [liThreeActive, setLiThreeActive] = useState(false);
   const [liFourActive, setLiFourActive] = useState(false);
-  const [lang, setLang] = useState("dk");
+  const [lang, setLang] = useState("da");
   const [isOpen, setIsOpen] = useState(false);
 
   const mouseEnter = (item) => {
@@ -114,13 +114,13 @@ export default function Header() {
               <img className="taxfree" src="/taxfree.webp" alt="Tax free logo" />
             </a>
             <a href="">Log ind</a>
-            <button
+            <div
               className="language"
               onClick={() => {
                 toggleOpen();
               }}
               aria-label="change language">
-              <img className="flag" src={`/${lang === "dk" ? "denmark" : "england"}.svg`} alt={lang === "dk" ? "Danish flag" : "English flag"} />
+              <img className="flag" src={`/${lang === "da" ? "denmark" : "england"}.svg`} alt={lang === "da" ? "Danish flag" : "English flag"} />
               <svg
                 width={28}
                 height={28}
@@ -140,9 +140,9 @@ export default function Header() {
               {isOpen && (
                 <div className="lang-drop">
                   <ul className="" role="menu">
-                    {lang !== "dk" && (
+                    {lang !== "da" && (
                       <li>
-                        <button className="inside-btn" onClick={() => switchLanguage("dk")}>
+                        <button className="inside-btn" onClick={() => switchLanguage("da")}>
                           <img src="/denmark.svg" alt="Dansk flag" />
                           Danish
                         </button>
@@ -159,7 +159,7 @@ export default function Header() {
                   </ul>
                 </div>
               )}
-            </button>
+            </div>
             <div className="search">
               <img src="/search.svg" alt="search on site" />
             </div>
@@ -177,13 +177,13 @@ export default function Header() {
           </div>
           <nav className={"mobile-menu " + (active ? "active" : "")}>
             <div className="top-row">
-              <button
+              <div
                 className="language"
                 onClick={() => {
                   toggleOpen();
                 }}
                 aria-label="change language">
-                <img className="flag" src={`/${lang === "dk" ? "denmark" : "england"}.svg`} alt={lang === "dk" ? "Danish flag" : "English flag"} />
+                <img className="flag" src={`/${lang === "da" ? "denmark" : "england"}.svg`} alt={lang === "da" ? "Danish flag" : "English flag"} />
                 <svg
                   width={28}
                   height={28}
@@ -203,9 +203,9 @@ export default function Header() {
                 {isOpen && (
                   <div className="lang-drop">
                     <ul className="" role="menu">
-                      {lang !== "dk" && (
+                      {lang !== "da" && (
                         <li>
-                          <button className="inside-btn" onClick={() => switchLanguage("dk")}>
+                          <button className="inside-btn" onClick={() => switchLanguage("da")}>
                             <img src="/denmark.svg" alt="Dansk flag" />
                             Danish
                           </button>
@@ -222,7 +222,7 @@ export default function Header() {
                     </ul>
                   </div>
                 )}
-              </button>
+              </div>
               <a className="ms-4" href="">
                 Log ind
               </a>

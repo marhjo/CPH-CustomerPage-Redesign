@@ -73,7 +73,7 @@ export default function LostAndFoundItem({ item }) {
       <div className="flex items-center">
         <a
           href="#"
-          class="text-white text-small border-[1px] border-grey-lighter font-medium rounded-lg text-sm px-2 py-1"
+          className="text-white text-small border-[1px] border-grey-lighter font-medium rounded-lg text-sm px-2 py-1"
         >
           Claim
         </a>

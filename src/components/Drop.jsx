@@ -18,14 +18,14 @@ export default function Drop({
   return (
     <div className="relative" ref={ref}>
       <button
-        class="text-white border-grey-lighter border-[1px] font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+        className="text-white border-grey-lighter border-[1px] font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
         type="button"
         onClick={() => setDropdown(!dropdown)}
       >
         {title}{" "}
         {!hideArrow && (
           <svg
-            class="w-2.5 h-2.5 ms-3"
+            className="w-2.5 h-2.5 ms-3"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

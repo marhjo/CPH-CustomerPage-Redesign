@@ -4,6 +4,7 @@ import Drop from "./Drop";
 import { getItems } from "../supabase/getItems";
 import { useState, useEffect } from "react";
 import Pagination from "./Pagination";
+import Modal from "./Modal";
 
 export default function LostAndFound() {
   const [items, setItems] = useState([]);
@@ -13,6 +14,8 @@ export default function LostAndFound() {
 
   const [sortBy, setSortBy] = useState(-1);
   const [filterBy, setFilterBy] = useState(-1);
+
+  const [test, setTest] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -46,7 +49,11 @@ export default function LostAndFound() {
 
   return (
     <section className="px-10 max-w-[1024px] w-full mx-auto">
-      <LostAndFoundCard className="w-full">
+      <Modal isOpen={test} close={() => setTest(false)} title="Test Mod">
+        Hi :3
+      </Modal>
+
+      <LostAndFoundCard className="w-full min-h-[480px]">
         <div className="flex w-full gap-3">
           <Drop
             title={
@@ -58,7 +65,7 @@ export default function LostAndFound() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="w-4 h-4 mr-2"
+                  className="w-4 h-4 mr-2"
                 >
                   <path d="m21 16-4 4-4-4"></path>
                   <path d="M17 20V4"></path>
@@ -90,7 +97,7 @@ export default function LostAndFound() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="w-4 h-4 mr-2"
+                  className="w-4 h-4 mr-2"
                 >
                   <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
                 </svg>
@@ -116,6 +123,8 @@ export default function LostAndFound() {
               }
             }}
           />
+
+          <button onClick={() => setTest(true)}>Test</button>
         </div>
 
         <div className="grid w-full gap-3 md:grid-cols-2 grid-cols-1 ">

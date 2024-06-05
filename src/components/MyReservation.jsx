@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getReservation } from "../supabase/getItems";
+import Cleave from "cleave.js/react";
 
 export default function MyReservation() {
   const [email, setEmail] = useState("");
@@ -30,55 +31,60 @@ export default function MyReservation() {
 
   // test@gmail.com 0000-0000-0000
   return (
-    <div class="w-full mb-16">
-      <h2 class="mb-5 text-4 font-bold text-center text-cph-blue">
+    <div className="w-full mb-16">
+      <h2 className="mb-5 text-4 font-bold text-center text-cph-blue">
         Min Reservation
       </h2>
 
-      <div class="flex gap-4 justify-center px-10 flex-col md:flex-row">
-        <div class="mb-6 w-full">
+      <div className="flex gap-4 justify-center px-10 flex-col md:flex-row">
+        <div className="mb-6 w-full">
           <input
             type="email"
             id="email"
             aria-label="email address"
             content={email}
             onChange={(e) => setEmail(e.target.value)}
-            class="block w-full p-3 border border-grey-lighter rounded-md h-14"
+            className="block w-full p-3 border border-grey-lighter rounded-md h-14"
             placeholder="Din e-mailadresse"
           />
-          <p class="text-small">
+          <p className="text-small">
             Den e-mail du brugte, da du foretog din reservation
           </p>
         </div>
 
-        <div class="mb-6 w-full">
-          <input
+        <div className="mb-6 w-full">
+          <Cleave
             type="text"
             id="reservationNumber"
             aria-label="reservation number"
             content={reservationNumber}
             onChange={(e) => setReservationNumber(e.target.value)}
-            class="block w-full p-3 border border-grey-lighter rounded-md h-14"
+            className="block w-full p-3 border border-grey-lighter rounded-md h-14"
             placeholder="Dit reservationsnummer"
+            options={{
+              delimiter: "-",
+              blocks: [4, 4, 4],
+              uppercase: true,
+            }}
           />
-          <p class="text-small">
+          <p className="text-small">
             Du finder reservationsnummer i din ordrebekræftelse
           </p>
         </div>
       </div>
 
-      <div class="flex justify-center px-10 flex-col">
+      <div className="flex justify-center px-10 flex-col">
         <button
           type="button"
-          class="self-center w-fit px-20 py-3 text-sm font-semibold text-cph-white bg-cph-blue rounded-md"
+          className="self-center w-fit px-20 py-3 text-sm font-semibold text-cph-white bg-cph-blue rounded-md"
           onClick={handleShowReservation}
         >
           Vis min reservation
         </button>
 
-        <a href="#" class="self-center hover:underline">
+        <button className="self-center hover:underline">
           Glemt dit reservationsnummer?
-        </a>
+        </button>
       </div>
 
       {status && (

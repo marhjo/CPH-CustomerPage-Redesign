@@ -1,20 +1,20 @@
 ---
 const description = "";
 const url = "";
-import "../css/main.css";
-import MainLayout from "../layouts/MainLayout.astro";
-import Hero from "../components/Hero.astro";
-import Grid from "../components/Grid.astro";
-import heroImage from "../images/heroIndex.webp";
-import parkering from "../images/handicapparkering.webp";
-import security from "../images/sikkerhedskontrol.webp";
-import hittegods from "../images/hittegods.webp";
-import kontakt from "../images/kontakt.webp";
-import FrontPageCard from "../components/FrontPageCard.astro";
-import { FAQ } from "../components/FAQ";
+import "../../css/main.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Grid from "../../components/Grid.astro";
+import heroImage from "../../images/heroIndex.webp";
+import parkering from "../../images/handicapparkering.webp";
+import security from "../../images/sikkerhedskontrol.webp";
+import hittegods from "../../images/hittegods.webp";
+import kontakt from "../../images/kontakt.webp";
+import FrontPageCard from "../../components/FrontPageCard.astro";
+import { FAQ } from "../../components/FAQ";
 import i18next, { t, changeLanguage } from "i18next";
 
-changeLanguage("da");
+changeLanguage("en");
 ---
 
 <MainLayout title={t("index.title")}>

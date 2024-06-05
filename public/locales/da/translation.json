@@ -1,0 +1,64 @@
+{
+  "heroLink": "KUNDESERVICE",
+  "index": {
+    "title": "Kundeservice",
+    "hero": {
+      "heroTitle": "Kundeservice",
+      "heroDescription": "Hos CPH kundeservice hjælper vi dig med at komme nemt gennem lufthavnen",
+      "heroAlt": "Billede af medarbejdere i lufthavnen"
+    },
+    "grid": {
+      "1": {
+        "title": "Parkering",
+        "description": "Se eller ændr din\n parkering her",
+        "alt": "Bilikon"
+      },
+      "2": {
+        "title": "Security",
+        "description": "Få svar på vigtige spørgmål\n om sikkerhedskontrol her",
+        "alt": "Sikkerhedstjekikon"
+      },
+      "3": {
+        "title": "Hittegods",
+        "description": "Find din genstand, hvis den er\n mistet i CPH Lufthavn",
+        "alt": "Hittegodsikon"
+      },
+      "4": {
+        "title": "Kontakt",
+        "description": "Kontak os i\n CPH kundeservice",
+        "alt": "Kontaktikon"
+      }
+    },
+    "FAQ": {
+      "title": "Skal du bruge hjælp til noget andet?",
+      "text": "Få svar på nogle ofte stillede spørgsmål omkring ting kundeservice ikke hjælper med.",
+      "questions": {
+        "1": {
+          "q": "Hvor meget bagage må jeg have med?",
+          "a": "Antallet af [indcheckede](https://www.cph.dk/flyinformation/flyselskaber) bagagestykker, håndbagage og personlige genstande varierer afhængigt af din billettype, destination og de specifikke regler fastsat af dit flyselskab. Derfor anbefaler vi, at du læser nærmere på dit flyselskabs hjemmeside for yderligere information.\n\nDu kan finde linket til dit flyselskabs hjemmeside samt eventuelle kontaktoplysninger linket nedenfor.",
+          "text": "Flyselskaber"
+        },
+        "2": {
+          "q": "Hvornår skal jeg checke ind i lufthavnen?",
+          "a": "Du bør altid ankomme til lufthavnen i god tid inden din afgang, da der kan forekomme kø ved check-in, sikkerhedskontrol og paskontrol.\n\nVi anbefaler generelt at ankomme til lufthavnen 2 1/2 timer før afgang på flyvninger inden for [Schengen-området](https://www.axa-schengen.com/en/countries-schengen-area) og 3 timer før for flyvninger uden for Schengen-området. Bemærk venligst, at disse tider henviser til den første destination på din rejse. For eksempel, hvis du har et mellemlanding i Tyskland på en flyvning til Asien, anbefaler vi at ankomme 2 1/2 timer før afgang, da din første destination er inden for Schengen.\n\nDu kan se yderligere information om afgangsterminaler, check-in, bagageregler og kontaktoplysninger for dit flyselskab på linket nedenfor.",
+          "text": "Flyselskaber"
+        },
+        "3": {
+          "q": "Hvordan kan CPH hjælpe passagerer med usynlige handicap på vej gennem lufthavnen?",
+          "a": "For at hjælpe rejsende med usynlige handicap såsom ADHD, autisme og ordblindhed har vi indført en ordning i Københavns Lufthavn kaldet Solsikkesnoren.\n\nSolsikkesnoren sikrer, at personer med usynlige handicap og diagnoser ikke behøver at forklare sig eller retfærdiggøre deres behov i situationer, hvor angst, stress, forvirring eller behov for hjælp opstår. Alle medarbejdere i lufthavnen, inklusive dem ved check-in og sikkerhedskontrollen, er bekendte med ordningen. Derfor er det blot nødvendigt at bære denne snor om halsen, så vil personalet være opmærksomme på behovet for synlige hensyn.\n\nDet er vigtigt at bemærke, at dette ikke betyder, at man automatisk får en hurtigere gennemgang i sikkerhedskontrollen. Hvis nødvendigt, anbefaler vi at bestille assistance.\n\nDesværre har vi ikke mulighed for at sende solsikkesnoren ud på forhånd. Hvis du henvender dig til vores informationsskranken i terminalerne, vil de med glæde hjælpe dig med at skaffe en solsikkesnor. Ordningen er gratis, og du kan læse mere om Solsikkesnoren på linket nedenfor.",
+          "text": "Læs mere"
+        },
+        "4": {
+          "q": "Min bagage var ikke med mit fly, da jeg landede i CPH, hvad gør jeg?",
+          "a": "Hvis din bagage ikke ankommer med flyet, skal du straks rapportere det til ankomstservice i bagageområdet, inden du forlader lufthavnen. Når du udfylder rapporten, skal du sørge for at have din bagagekvittering med, som viser stregkoden og destinationskoden, samt dit boardingkort eller rejsebevis.\n\nDet er vigtigt at beskrive din mistede bagage så detaljeret som muligt, inklusive dens udseende. Hvis du allerede har forladt lufthavnen, skal du kontakte handlingselskabet for det flyselskab, du har fløjet med, og rapportere den mistede bagage.\n\nDu kan finde oplysninger om, hvilket handlingselskab der håndterer dit flyselskab via [dette link](https://www.cph.dk/flyinformation/flyselskaber).\n\nDu kan finde kontaktinformationen til handlingselskaberne på linket nedenfor.",
+          "text": "Handlingselskaber"
+        },
+        "5": {
+          "q": "Hvad er TAX-FREE Shoppens åbningstider?",
+          "a": "Den store TAX-FREE Main Shop, som du passerer umiddelbart efter sikkerhedskontrollen, har døgnåbent hver dag, ligesom deres afdeling ved bagageudleveringen.\n\nDe øvrige mindre TAX-FREE Shop-afdelinger har mere begrænsede åbningstider, så vi anbefaler at benytte den store TAX-FREE Shop for at være på den sikre side.\n\nDu kan altid finde de specifikke åbningstider for deres forskellige afdelinger ved at klikke på linket nedenfor.",
+          "text": "TAX FREE"
+        }
+      }
+    }
+  }
+}

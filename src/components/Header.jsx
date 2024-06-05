@@ -13,7 +13,7 @@ export default function Header() {
   const [liTwoActive, setLiTwoActive] = useState(false);
   const [liThreeActive, setLiThreeActive] = useState(false);
   const [liFourActive, setLiFourActive] = useState(false);
-  const [lang, setLang] = useState("dk");
+  const [lang, setLang] = useState("da");
   const [isOpen, setIsOpen] = useState(false);
 
   const mouseEnter = (item) => {
@@ -75,11 +75,43 @@ export default function Header() {
   function handleLiFourClick() {
     setLiFourActive((old) => !old);
   }
+  useEffect(() => {
+    if (!window.location.pathname.includes("/en")) {
+      localStorage.setItem("selectedLanguage", "da");
+    }
+  }, []);
+
+  useEffect(() => {
+    const getLanguageFromStorage = () => {
+      const selectedLang = localStorage.getItem("selectedLanguage") || "da";
+      setLang(selectedLang);
+    };
+
+    getLanguageFromStorage();
+
+    const handlePopstate = () => {
+      getLanguageFromStorage();
+    };
+
+    window.addEventListener("popstate", handlePopstate);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopstate);
+    };
+  }, []);
 
   const switchLanguage = (selectedLang) => {
+    localStorage.setItem("selectedLanguage", selectedLang);
+
     setLang(selectedLang);
-    setTimeout(() => setIsOpen(false), 0);
+
+    setIsOpen(false);
+
+    const newPath = selectedLang === "en" ? "/en" : "/";
+    window.history.pushState({}, "", newPath);
+    window.location.href = newPath;
   };
+
   const toggleOpen = () => {
     setIsOpen((prevOpen) => !prevOpen);
   };
@@ -114,19 +146,19 @@ export default function Header() {
               <img className="taxfree" src="/taxfree.webp" alt="Tax free logo" />
             </a>
             <a href="">Log ind</a>
-            <button
+            <div
               className="language"
               onClick={() => {
                 toggleOpen();
               }}
               aria-label="change language">
-              <img className="flag" src={`/${lang === "dk" ? "denmark" : "england"}.svg`} alt={lang === "dk" ? "Danish flag" : "English flag"} />
+              <img className="flag" src={`/${lang === "da" ? "denmark" : "england"}.svg`} alt={lang === "da" ? "Danish flag" : "English flag"} />
               <svg
                 width={28}
                 height={28}
                 data-slot="icon"
                 fill="none"
-                stroke-width="3"
+                strokeWidth="3"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,14 +167,14 @@ export default function Header() {
                   transform: isOpen ? `rotate(180deg)` : "rotate(0deg)",
                 }}
                 className="transition-transform duration-300 ease-in-out min-w-10">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
               </svg>
               {isOpen && (
                 <div className="lang-drop">
                   <ul className="" role="menu">
-                    {lang !== "dk" && (
+                    {lang !== "da" && (
                       <li>
-                        <button className="inside-btn" onClick={() => switchLanguage("dk")}>
+                        <button className="inside-btn" onClick={() => switchLanguage("da")}>
                           <img src="/denmark.svg" alt="Dansk flag" />
                           Danish
                         </button>
@@ -159,7 +191,7 @@ export default function Header() {
                   </ul>
                 </div>
               )}
-            </button>
+            </div>
             <div className="search">
               <img src="/search.svg" alt="search on site" />
             </div>
@@ -177,19 +209,19 @@ export default function Header() {
           </div>
           <nav className={"mobile-menu " + (active ? "active" : "")}>
             <div className="top-row">
-              <button
+              <div
                 className="language"
                 onClick={() => {
                   toggleOpen();
                 }}
                 aria-label="change language">
-                <img className="flag" src={`/${lang === "dk" ? "denmark" : "england"}.svg`} alt={lang === "dk" ? "Danish flag" : "English flag"} />
+                <img className="flag" src={`/${lang === "da" ? "denmark" : "england"}.svg`} alt={lang === "da" ? "Danish flag" : "English flag"} />
                 <svg
                   width={28}
                   height={28}
                   data-slot="icon"
                   fill="none"
-                  stroke-width="3"
+                  strokeWidth="3"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -198,14 +230,14 @@ export default function Header() {
                     transform: isOpen ? `rotate(180deg)` : "rotate(0deg)",
                   }}
                   className="transition-transform duration-300 ease-in-out min-w-10">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
                 </svg>
                 {isOpen && (
                   <div className="lang-drop">
                     <ul className="" role="menu">
-                      {lang !== "dk" && (
+                      {lang !== "da" && (
                         <li>
-                          <button className="inside-btn" onClick={() => switchLanguage("dk")}>
+                          <button className="inside-btn" onClick={() => switchLanguage("da")}>
                             <img src="/denmark.svg" alt="Dansk flag" />
                             Danish
                           </button>
@@ -222,7 +254,7 @@ export default function Header() {
                     </ul>
                   </div>
                 )}
-              </button>
+              </div>
               <a className="ms-4" href="">
                 Log ind
               </a>

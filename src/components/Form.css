@@ -107,3 +107,28 @@
     outline-color: var(--light-blue);
   }
 }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  box-shadow: var(--box-shadow-hover);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.modal-content {
+  text-align: center;
+  line-height: 160%;
+
+  & p:nth-of-type(2) {
+    margin-top: 6px;
+    font-weight: var(--fw-semi-bold);
+  }
+}

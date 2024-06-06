@@ -1,0 +1,134 @@
+.kontakt-formular {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 40px;
+  padding: 32px 40px;
+  border-radius: 10px;
+  max-width: 1024px;
+  box-shadow: var(--box-shadow-medium);
+
+  @media (width<640px) {
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  & legend {
+    color: var(--cph-blue);
+    font-size: var(--fs-3);
+    font-weight: var(--fw-semi-bold);
+
+    @media (width<640px) {
+      font-size: var(--fs-4);
+    }
+    @media (width<482px) {
+      font-size: var(--fs-6);
+    }
+  }
+  & h4 {
+    margin-top: 24px;
+    color: black;
+    font-size: var(--fs-p);
+    font-weight: var(--fw-bold);
+    flex-basis: 100%;
+  }
+  & label {
+    flex-basis: 25%;
+    color: var(--grey-dark);
+    font-size: var(--fs-p);
+  }
+  .flex-contents {
+    display: contents;
+
+    @media (width<640px) {
+      margin-top: 24px;
+      display: flex;
+      gap: 32px;
+    }
+  }
+  & input[type="checkbox"] {
+    display: grid;
+    justify-content: start;
+    flex-basis: 20px;
+    height: 20px;
+    width: 20px;
+    accent-color: var(--light-blue);
+    cursor: pointer;
+  }
+  & label span {
+    color: red;
+    font-size: var(--fs-6);
+  }
+  & label[for="emailOnly"] {
+    font-size: var(--fs-smaller);
+
+    @media (width<640px) {
+      min-width: max-content;
+    }
+  }
+  & button {
+    background: var(--cph-blue);
+    color: var(--cph-white);
+    font-weight: var(--fw-semi-bold);
+    font-size: var(--fs-large);
+    padding: 10px 44px;
+    border-radius: 5px;
+    align-self: center;
+    margin-top: 32px;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background: var(--light-blue);
+    }
+
+    @media (width<640px) {
+      font-size: var(--fs-p);
+    }
+  }
+}
+.form-flex {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 2%;
+
+  @media (width<640px) {
+    flex-direction: column;
+    row-gap: 4px;
+  }
+}
+.kontakt-formular :is(input, select, textarea) {
+  flex-basis: 73%;
+  border: 1px solid var(--grey-light);
+  border-radius: 5px;
+  padding: 2px 4px;
+
+  &:focus {
+    outline-color: var(--light-blue);
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  box-shadow: var(--box-shadow-hover);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.modal-content {
+  text-align: center;
+  line-height: 160%;
+
+  & p:nth-of-type(2) {
+    margin-top: 6px;
+    font-weight: var(--fw-semi-bold);
+  }
+}
